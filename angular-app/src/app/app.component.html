@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: left">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div>
+Enter URL where the service API is placed (something like http://www.mysite.com) 
+  <table>
+    <tr>
+      <td>URL: 
+        <input type="text"  class="form-control" id="some-id" name="server-url" placeholder="http://www.mysite.com" [(ngModel)]="urlInput" ></td>
+      <td>{{urlSuffix}}</td>
+    </tr>
+  </table>
+  <br />
+  <button (click)="onClickMe()">Get Data</button>
+  <br />
+  <!-- urlInput: {{urlInput}} -->
+  <br />
+  Response: {{response}}
+</div>

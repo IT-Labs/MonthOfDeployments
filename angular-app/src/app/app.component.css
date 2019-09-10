@@ -1,0 +1,10 @@
+/*This is my stylesheet!*/
+A:link {
+	COLOR: red
+}
+A:visited {
+	COLOR: #800080
+}
+A:hover {
+	COLOR: green 
+}

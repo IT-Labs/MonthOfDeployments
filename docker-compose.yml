@@ -1,0 +1,11 @@
+#docker-compose.yml (Base)
+version: '2.4'
+services:
+  web-demo:
+    mem_limit: 1000M
+    image: web-demo:latest
+    container_name: web-demo
+    build:
+      context: angular-app/.
+    ports:
+      - 4202:4200

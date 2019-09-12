@@ -51,13 +51,12 @@ Run Dockerfile:
 Docker Compose
  - Run docker compose
     - docker-compose up
-  - Extend docker compose with web api (docker-compose_b.yml)
-  - Make web to depend from web api (docker-compose_c.yml)
-  - Put both dockers in named network (docker-compose_d.yml)
+  - [Extend docker compose with web api](DockerComposeExercise/docker-compose_b.yml)
+  - [Make web to depend from web api](DockerComposeExercise/docker-compose_c.yml)
+  - [Put both dockers in named network](DockerComposeExercise/docker-compose_d.yml)
     - List networks : docker network ls 
     - Check network:  docker network inspect demo-network 
-  - Add environment  variable in web api -> ProfileName (docker-compose_e.yml)
-  - Add postges and volume  (docker-compose_f.yml)
-    > You can find all steps in Docker Compose Steps.zip
+  - [Add environment  variable in web api -> ProfileName](DockerComposeExercise/docker-compose_e.yml)
+  - [Add postges and volume](DockerComposeExercise/docker-compose_f.yml)
 
 

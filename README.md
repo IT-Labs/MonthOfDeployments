@@ -1,7 +1,7 @@
 # MonthOfDeployments
 
 ## Docker ins & outs
-docker commannds reference: https://docs.docker.com/engine/reference/commandline/docker/
+docker commands reference: https://docs.docker.com/engine/reference/commandline/docker/
 
 ### Exercise 1
 

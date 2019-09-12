@@ -1,0 +1,30 @@
+#docker-compose.yml (Base)
+version: '2.4'
+services:
+  web-demo:
+    image: web-demo:latest
+    container_name: web-demo
+    build:
+      context: angular-app/.
+    networks:
+      - demo
+    ports:
+      - 4202:4200
+    depends_on:
+      - api-demo
+  api-demo:
+    mem_limit: 1000M
+    image: api-demo:latest
+    container_name: api-demo
+    build:
+      context: netcore-api/DockerDemoAPI/.
+    environment:
+      - ProfileName=DEMO
+    networks:
+      - demo
+    ports:
+      - 5001:80    
+networks:
+  demo:
+    name: demo-network
+    driver: bridge

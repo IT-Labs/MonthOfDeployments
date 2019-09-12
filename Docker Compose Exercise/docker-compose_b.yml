@@ -1,0 +1,18 @@
+#docker-compose.yml (Base)
+version: '2.4'
+services:
+  web-demo:
+    image: web-demo:latest
+    container_name: web-demo
+    build:
+      context: angular-app/.
+    ports:
+      - 4202:4200
+  api-demo:
+    image: api-demo:latest
+    container_name: api-demo
+    build:
+      context: netcore-api/DockerDemoAPI/.
+    ports:
+      - 5001:80
+   

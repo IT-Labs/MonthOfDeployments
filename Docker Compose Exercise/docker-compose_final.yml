@@ -1,0 +1,54 @@
+#docker-compose.yml (Base)
+version: '2.4'
+services:
+  web-demo:
+    mem_limit: 1000M
+    image: web-demo:latest
+    container_name: web-demo
+    build:
+      context: angular-app/.
+    networks:
+      - demo
+    expose:
+      - "4202"
+    ports:
+      - 4202:4200
+    depends_on:
+      - api-demo
+  api-demo:
+    mem_limit: 1000M
+    image: api-demo:latest
+    container_name: api-demo
+    build:
+      context: netcore-api/DockerDemoAPI/.
+    environment:
+      - ProfileName=DEMO
+    networks:
+      - demo
+    expose:
+      - "5001"
+    ports:
+      - 5001:80
+    depends_on:
+      - postgres-demo
+  postgres-demo:
+    mem_limit: 500M
+    image: postgres
+    container_name: postgres-demo
+    environment:
+      - "POSTGRES_PASSWORD=dev123"
+      - "POSTGRES_USER=dev"
+      - "POSTGRES_DB=demo"
+    volumes:
+      - demo-vol:/var/lib/postgresql/data:z
+    ports:
+      - "5444:5432"
+    networks:
+      - demo
+networks:
+  demo:
+    name: demo-network
+    driver: bridge
+volumes:
+  demo-vol:
+    external: true
